@@ -25,11 +25,30 @@ def gross_for_director(d)
 end
 
 def list_of_directors(source)
-  # Write this implementation
-end
+  director_names = []
+  for i in source
+  i.each do |key, value|
+    if key == :name
+      #pp value
+      director_names.push(value)
+      end
+    end
+  end
+  return director_names
+end  # Write this implementation
+
 
 def total_gross(source)
   # Write this implementation
+  #pp source
+  #pp directors_totals(source)
+  total = 0
+  for i in directors_totals(source)
+    total += i[1]
+    end
+    return total
+end
+    #dont need to use other method.
   #
   # Should use methods:
   # 1. directors_totals: returns a Hash of { dir_name => gross }
@@ -38,6 +57,6 @@ def total_gross(source)
   # Visit each key (i.e. director name), look up the value in the hash
   # returned by directors_totals, and add it to a running total. When done,
   # return the total
-end
+
 
 
